@@ -12,6 +12,7 @@ import SignUp from "./components/pages/SignUp";
 import GlobalStyle from "./Global/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { theme } from './Global/Theme';
+
 const router = createBrowserRouter([
   {
     path: "/",

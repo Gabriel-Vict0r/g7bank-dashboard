@@ -9,12 +9,13 @@ export const theme = {
     blackSecondary: "#1b1b1b",
     inputStrock: "#282323",
     grayThirty: "#9fa5b6",
+    weakGray: "#808080",
   },
   length: {
-    headingPrimary: '2.25rem',
-    headingSecondory: '1.563rem',
-    bodyText: '1rem',
-    buttonText: '1rem',
-    smallCaption: '.75rem'
-  }
+    headingPrimary: "2.25rem",
+    headingSecondory: "1.563rem",
+    bodyText: "1rem",
+    buttonText: "1rem",
+    smallCaption: ".75rem",
+  },
 };
