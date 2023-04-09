@@ -90,6 +90,17 @@ export const Input = styled.input`
   &::placeholder {
     color: ${(prop) => prop.theme.colors.body};
   }
+  & input::before {
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    color: ${(prop) => prop.theme.colors.weakGray};
+    background-color: ${(prop) => prop.theme.colors.weakGray};
+    border: 1px solid back;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 `;
 export const ContainerInput = styled.div`
   width: 80%;
@@ -101,7 +112,7 @@ export const ContainerInput = styled.div`
   justify-content: center;
   & svg {
     color: ${(prop) => prop.theme.colors.body};
-    font-size: 30px;
+    font-size: 25px;
     position: absolute;
     left: 0;
     bottom: 10px;
@@ -182,7 +193,10 @@ export const ContainerNetworks = styled.div`
 `;
 export const LinkNetwork = styled.a`
   background-color: ${(prop) => prop.theme.colors.primary};
-  padding: 0.9rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
   height: 100%;
   border-radius: 0.375rem;
   cursor: pointer;
@@ -203,7 +217,7 @@ export const SignUp = styled(Link)`
   text-align: center;
   color: ${(prop) => prop.theme.colors.body};
   border-radius: 0.375rem 0;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   &:hover {
     filter: brightness(1.2);
   }
