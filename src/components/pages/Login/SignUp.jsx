@@ -23,38 +23,42 @@ import {
   Opening,
 } from "./Style";
 import imgLogo from "../../../img/logo.svg";
-import Facebook from '../../../img/icons/facebook_icon.svg';
-import Google from '../../../img/icons/google_icon.svg';
-import Linkedin from '../../../img/icons/linkedin_icon.svg';
-import ilustrationImg from "../../../img/loginArt.svg";
+import Facebook from "../../../img/icons/facebook_icon.svg";
+import Google from "../../../img/icons/google_icon.svg";
+import Linkedin from "../../../img/icons/linkedin_icon.svg";
+import ilustrationImg from "../../../img/SignUpArt.svg";
 import { Link } from "react-router-dom";
 import { BiUserPin, BiLock } from "react-icons/bi";
-import { Fade } from 'react-awesome-reveal';
-const Login = () => {
+import { HiOutlineMail } from 'react-icons/hi';
+
+const SignUp = () => {
   function getForm() {}
   return (
     <Wrapper>
       <SectionSide>
         <Logo src={imgLogo} />
-        <Title>Welcome back!</Title>
+        <Title>Welcome to G7Bank</Title>
         <Paragraph>
-          Welcome to G7Bank, your trusted banking partner. Our secure and
-          user-friendly login page is designed to provide you with easy access
-          to your account information and help you manage your finances
-          conveniently.
+          Welcome to G7Bank, your trusted banking partner. Our sign-up page is
+          designed to make it easy for you to open an account and start managing
+          your finances with ease.
         </Paragraph>
-        <Ilustration src={ilustrationImg} />
+        <Ilustration src={ilustrationImg} $secondary />
       </SectionSide>
       <Opening direction="right" duration={1500}>
         <SectionTwo>
-          <SubTitle>Sign to your Account</SubTitle>
+          <SubTitle>Create your new Account</SubTitle>
           <LinkSignUp>
-            Don't have an account? <Link to="/SignUp">Sign Up</Link>
+            Have an account? <Link to="/">Sign in</Link>
           </LinkSignUp>
           <FormLogin onSubmit={getForm}>
             <ContainerInput>
               <BiUserPin />
               <Input type="text" placeholder="Username" />
+            </ContainerInput>
+            <ContainerInput>
+              <HiOutlineMail />
+              <Input type="email" placeholder="E-mail" />
             </ContainerInput>
             <ContainerInput>
               <BiLock />
@@ -63,7 +67,10 @@ const Login = () => {
             <ContainerLabel>
               <ContainerCheck>
                 <Input type="checkbox" value="Remember me" />
-                <LabelCheckBox>Remember me</LabelCheckBox>
+                <LabelCheckBox>
+                  Agree with <Link to="/">Term's</Link> & 
+                  <Link to="/"> Conditions</Link>
+                </LabelCheckBox>
               </ContainerCheck>
               <Link to="/forgotPassword">Forgotton Password?</Link>
             </ContainerLabel>
@@ -81,11 +88,11 @@ const Login = () => {
               <IconNetwork src={Linkedin} alt="Linkedin icon" />
             </LinkNetwork>
           </ContainerNetworks>
-          <ButtonSignUP to="/SignUp">Sign Up</ButtonSignUP>
+          <ButtonSignUP to="/">Sign in</ButtonSignUP>
         </SectionTwo>
       </Opening>
     </Wrapper>
   );
 };
 
-export default Login;
+export default SignUp;

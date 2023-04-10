@@ -6,12 +6,12 @@ export const Logo = styled.img`
   width: 170px;
 `;
 export const Ilustration = styled.img`
-  width: 40%;
+  width: ${props => props.$secondary ? '70%' : '40%'};
 `;
 export const Title = styled.h1`
   font-weight: 700;
   letter-spacing: 2px;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.Title};
   font-size: ${(prop) => prop.theme.length.headingPrimary};
 `;
 
@@ -53,6 +53,7 @@ export const SectionTwo = styled(SectionSide)`
   margin-top: 0;
   justify-content: baseline;
   gap: 1rem;
+  box-shadow: 45px 0px 50px 5px #2d42ba;
 `;
 export const Paragraph = styled.p`
   font-size: ${(prop) => prop.theme.length.bodyText};
@@ -90,7 +91,7 @@ export const Input = styled.input`
   &::placeholder {
     color: ${(prop) => prop.theme.colors.body};
   }
-  & input::before {
+  & ::before {
     content: "";
     width: 2rem;
     height: 2rem;
@@ -167,7 +168,7 @@ export const ContainerCheck = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  width: 50%;
+  width: 60%;
 `;
 export const InputSend = styled.input`
   appearance: none;
@@ -209,7 +210,7 @@ export const LinkNetwork = styled.a`
 export const IconNetwork = styled.img`
   width: 120%;
 `;
-export const SignUp = styled(Link)`
+export const ButtonSignUP = styled(Link)`
   text-decoration: none;
   background-color: ${(prop) => prop.theme.colors.primary};
   width: 100%;

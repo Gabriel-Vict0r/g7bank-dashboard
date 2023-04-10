@@ -8,10 +8,10 @@ import {
   Link,
 } from "react-router-dom";
 import Login from "./components/pages/Login/Login";
-import SignUp from "./components/pages/SignUp";
+import SignUp from "./components/pages/Login/SignUp";
 import GlobalStyle from "./Global/GlobalStyle";
 import { ThemeProvider } from "styled-components";
-import { theme } from './Global/Theme';
+import { theme } from "./Global/Theme";
 
 const router = createBrowserRouter([
   {
