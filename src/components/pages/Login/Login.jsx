@@ -23,15 +23,23 @@ import {
   Opening,
 } from "./Style";
 import imgLogo from "../../../img/logo.svg";
-import Facebook from '../../../img/icons/facebook_icon.svg';
-import Google from '../../../img/icons/google_icon.svg';
-import Linkedin from '../../../img/icons/linkedin_icon.svg';
+import Facebook from "../../../img/icons/facebook_icon.svg";
+import Google from "../../../img/icons/google_icon.svg";
+import Linkedin from "../../../img/icons/linkedin_icon.svg";
 import ilustrationImg from "../../../img/loginArt.svg";
 import { Link } from "react-router-dom";
 import { BiUserPin, BiLock } from "react-icons/bi";
-import { Fade } from 'react-awesome-reveal';
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+
+
 const Login = () => {
-  function getForm() {}
+  const navigate = useNavigate();
+  const getForm = () => {
+    // e.preventDefault();
+    navigate("/dashboard");
+  };
   return (
     <Wrapper>
       <SectionSide>

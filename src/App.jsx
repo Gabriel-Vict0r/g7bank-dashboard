@@ -1,16 +1,13 @@
-import { useState, Fragment } from "react";
-import { ThemeProvider } from "styled-components";
-import { theme } from "./Global/Theme";
-import GlobalStyle from "./Global/GlobalStyle";
 import Login from "./components/pages/Login/Login";
 import SignUp from "./components/pages/Login/SignUp";
+import Dashboard from "./components/pages/Dashboard/Dashboard";
 function App() {
-  const [count, setCount] = useState(0);
   return (
-      <div className="App">
-        <Login />
-        <SignUp />
-      </div>
+    <div className="App">
+      <Login />
+      <SignUp />
+      <Dashboard />
+    </div>
   );
 }
 

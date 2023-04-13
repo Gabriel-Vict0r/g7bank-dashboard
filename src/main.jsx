@@ -12,6 +12,7 @@ import SignUp from "./components/pages/Login/SignUp";
 import GlobalStyle from "./Global/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./Global/Theme";
+import Dashboard from "./components/pages/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     path: "/SignUp",
     element: <SignUp />,
   },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+  }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
