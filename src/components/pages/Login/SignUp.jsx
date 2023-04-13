@@ -29,7 +29,7 @@ import Linkedin from "../../../img/icons/linkedin_icon.svg";
 import ilustrationImg from "../../../img/SignUpArt.svg";
 import { Link } from "react-router-dom";
 import { BiUserPin, BiLock } from "react-icons/bi";
-import { HiOutlineMail } from 'react-icons/hi';
+import { HiOutlineMail } from "react-icons/hi";
 
 const SignUp = () => {
   function getForm() {}
@@ -37,7 +37,9 @@ const SignUp = () => {
     <Wrapper>
       <SectionSide>
         <Logo src={imgLogo} />
-        <Title>Welcome to G7Bank</Title>
+        <Title>
+          Welcome to <span>G7Bank</span>
+        </Title>
         <Paragraph>
           Welcome to G7Bank, your trusted banking partner. Our sign-up page is
           designed to make it easy for you to open an account and start managing
@@ -53,22 +55,22 @@ const SignUp = () => {
           </LinkSignUp>
           <FormLogin onSubmit={getForm}>
             <ContainerInput>
-              <BiUserPin />
               <Input type="text" placeholder="Username" />
+              <BiUserPin />
             </ContainerInput>
             <ContainerInput>
-              <HiOutlineMail />
               <Input type="email" placeholder="E-mail" />
+              <HiOutlineMail />
             </ContainerInput>
             <ContainerInput>
-              <BiLock />
               <Input type="password" placeholder="Password" />
+              <BiLock />
             </ContainerInput>
             <ContainerLabel>
               <ContainerCheck>
                 <Input type="checkbox" value="Remember me" />
                 <LabelCheckBox>
-                  Agree with <Link to="/">Term's</Link> & 
+                  Agree with <Link to="/">Term's</Link> &
                   <Link to="/"> Conditions</Link>
                 </LabelCheckBox>
               </ContainerCheck>

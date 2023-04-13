@@ -6,13 +6,16 @@ export const Logo = styled.img`
   width: 170px;
 `;
 export const Ilustration = styled.img`
-  width: ${props => props.$secondary ? '70%' : '40%'};
+  width: ${(props) => (props.$secondary ? "70%" : "40%")};
 `;
 export const Title = styled.h1`
   font-weight: 700;
   letter-spacing: 2px;
   color: ${(props) => props.theme.colors.Title};
   font-size: ${(prop) => prop.theme.length.headingPrimary};
+  & span {
+    color: ${(props) => props.theme.colors.primary};
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -82,25 +85,21 @@ export const Input = styled.input`
   height: 2.5rem;
   background: transparent;
   border: none;
-  border-bottom: 2px solid ${(prop) => prop.theme.colors.primary};
+  border-bottom: 2px solid ${(prop) => prop.theme.colors.body};
   outline: none;
   color: ${(prop) => prop.theme.colors.body};
   letter-spacing: 2px;
   text-indent: 38px;
   font-size: ${(prop) => prop.theme.length.bodyText};
+  transition: all 0.2s ease-in-out;
   &::placeholder {
     color: ${(prop) => prop.theme.colors.body};
   }
-  & ::before {
-    content: "";
-    width: 2rem;
-    height: 2rem;
-    color: ${(prop) => prop.theme.colors.weakGray};
-    background-color: ${(prop) => prop.theme.colors.weakGray};
-    border: 1px solid back;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  &:focus + svg {
+    color: ${(prop) => prop.theme.colors.primary};
+  }
+  &:focus {
+    border-bottom-color: ${(prop) => prop.theme.colors.primary};
   }
 `;
 export const ContainerInput = styled.div`

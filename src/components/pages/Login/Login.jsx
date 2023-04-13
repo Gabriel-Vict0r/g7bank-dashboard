@@ -53,12 +53,12 @@ const Login = () => {
           </LinkSignUp>
           <FormLogin onSubmit={getForm}>
             <ContainerInput>
-              <BiUserPin />
               <Input type="text" placeholder="Username" />
+              <BiUserPin />
             </ContainerInput>
             <ContainerInput>
-              <BiLock />
               <Input type="password" placeholder="Password" />
+              <BiLock />
             </ContainerInput>
             <ContainerLabel>
               <ContainerCheck>
