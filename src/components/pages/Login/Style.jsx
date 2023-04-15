@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Slide } from "react-awesome-reveal";
-
-export const Logo = styled.img`
-  width: 170px;
-`;
 export const Ilustration = styled.img`
   width: ${(props) => (props.$secondary ? "70%" : "40%")};
 `;

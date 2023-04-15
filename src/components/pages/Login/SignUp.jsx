@@ -3,7 +3,6 @@ import {
   Title,
   Wrapper,
   SectionSide,
-  Logo,
   Paragraph,
   Ilustration,
   SectionTwo,
@@ -22,6 +21,8 @@ import {
   ButtonSignUP,
   Opening,
 } from "./Style";
+import { Logo } from "../../../Global/GeneralComponents";
+
 import imgLogo from "../../../img/logo.svg";
 import Facebook from "../../../img/icons/facebook_icon.svg";
 import Google from "../../../img/icons/google_icon.svg";

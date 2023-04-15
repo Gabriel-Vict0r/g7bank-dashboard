@@ -15,6 +15,7 @@ export const theme = {
     headingPrimary: "2.25rem",
     headingSecondory: "1.563rem",
     bodyText: "1rem",
+    textHeader: '1.2rem',
     buttonText: "1rem",
     smallCaption: ".75rem",
   },
