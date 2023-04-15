@@ -19,8 +19,9 @@ export const ContainerSearch = styled.div`
   align-items: center;
   gap: 1rem;
   & svg {
-    color: ${(prop) => prop.theme.colors.primary};
+    color: ${(prop) => (prop.$colorSvg ? "#2d42ba" : "#C2C2DD")};
     font-size: 1.7rem;
+    transition: all .3s ease-in-out;
   }
 `;
 export const SearchBar = styled.input`
