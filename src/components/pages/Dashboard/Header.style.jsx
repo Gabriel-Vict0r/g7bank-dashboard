@@ -21,7 +21,7 @@ export const ContainerSearch = styled.div`
   & svg {
     color: ${(prop) => (prop.$colorSvg ? "#2d42ba" : "#C2C2DD")};
     font-size: 1.7rem;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 `;
 export const SearchBar = styled.input`
@@ -55,7 +55,7 @@ export const InfoProfile = styled.div`
 `;
 export const ImageProfile = styled.img`
   border-radius: 50%;
-  width: 18%;
+  width: 15%;
 `;
 export const UserName = styled.p`
   font-size: ${(prop) => prop.theme.length.textHeader};
