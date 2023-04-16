@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Slide } from "react-awesome-reveal";
+import { Slide, Fade} from "react-awesome-reveal";
 export const Ilustration = styled.img`
   width: ${(props) => (props.$secondary ? "70%" : "40%")};
 `;
@@ -35,9 +35,13 @@ export const SectionSide = styled.div`
   justify-content: space-between;
   gap: 2.3rem;
   align-items: center;
-  width: 50%;
+  width: 100%;
   padding: 5px;
   margin-top: 4rem;
+`;
+export const Faded = styled(Fade)`
+  width: 50%;
+  height: 100vh;
 `;
 export const Opening = styled(Slide)`
   width: 50%;

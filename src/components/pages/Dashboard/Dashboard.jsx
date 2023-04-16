@@ -1,5 +1,18 @@
 import React from "react";
-import {} from "./Dashboard.style";
+import {
+  Tittle,
+  Content,
+  Main,
+  CardBalance,
+  SubTitle,
+  WrapperCard,
+  Balance,
+  Coin,
+  CardEarn,
+  Date,
+  Earn,
+  Percent,
+} from "./Dashboard.style";
 import {
   Header,
   SearchBar,
@@ -39,7 +52,7 @@ const Dashboard = () => {
       route: "/dashboard",
       icon: <MdOutlineDashboard />,
     },
-    { content: "Profile", route: "/profile", icon: <CgProfile />},
+    { content: "Profile", route: "/profile", icon: <CgProfile /> },
     {
       content: "My Wallet",
       submenus: [
@@ -50,7 +63,7 @@ const Dashboard = () => {
     },
     { content: "Calendar", route: "/calendar", icon: <BsCalendar3Range /> },
     { content: "Transfer", route: "/transfer", icon: <BiTransfer /> },
-    { content: "Transaction", route: "/transaction", icon: <BsGraphUpArrow />},
+    { content: "Transaction", route: "/transaction", icon: <BsGraphUpArrow /> },
     {
       content: "Exchange",
       route: "/exchange",
@@ -60,7 +73,7 @@ const Dashboard = () => {
     { content: "Setting", route: "/setting", icon: <RiListSettingsLine /> },
   ];
   return (
-    <>
+    <Main>
       <Header>
         <Logo src={LogoSvg} $Header />
         <ContainerSearch $colorSvg={color}>
@@ -86,11 +99,28 @@ const Dashboard = () => {
           {menuLinks.map((el) => (
             <Element to={el.route}>
               {el.icon}
-              {el.content}</Element>
+              {el.content}
+            </Element>
           ))}
         </List>
       </Menu>
-    </>
+      <Content>
+        <Tittle>Dashboard</Tittle>
+        <WrapperCard>
+          <CardBalance>
+            <SubTitle>Current Balance</SubTitle>
+            <Balance>$12,000.00</Balance>
+            <Coin>USD</Coin>
+          </CardBalance>
+          <CardEarn>
+            <SubTitle>Earning</SubTitle>
+            <Date>Montly</Date>
+            <Earn>$5,000.00</Earn>
+            <Percent>+35.5%</Percent>
+          </CardEarn>
+        </WrapperCard>
+      </Content>
+    </Main>
   );
 };
 

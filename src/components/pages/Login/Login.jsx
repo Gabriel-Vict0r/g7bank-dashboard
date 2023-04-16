@@ -20,8 +20,9 @@ import {
   LinkNetwork,
   ButtonSignUP,
   Opening,
+  Faded,
 } from "./Style";
-import { Logo } from '../../../Global/GeneralComponents';
+import { Logo } from "../../../Global/GeneralComponents";
 import imgLogo from "../../../img/logo.svg";
 import Facebook from "../../../img/icons/facebook_icon.svg";
 import Google from "../../../img/icons/google_icon.svg";
@@ -31,28 +32,30 @@ import { Link } from "react-router-dom";
 import { BiUserPin, BiLock } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-
-
+import { Fade } from "react-awesome-reveal";
 
 const Login = () => {
   const navigate = useNavigate();
-  const getForm = () => {
-    // e.preventDefault();
+  const getForm = (e) => {
+    e.preventDefault();
     navigate("/dashboard");
   };
   return (
     <Wrapper>
-      <SectionSide>
-        <Logo src={imgLogo} />
-        <Title>Welcome back!</Title>
-        <Paragraph>
-          Welcome to G7Bank, your trusted banking partner. Our secure and
-          user-friendly login page is designed to provide you with easy access
-          to your account information and help you manage your finances
-          conveniently.
-        </Paragraph>
-        <Ilustration src={ilustrationImg} />
-      </SectionSide>
+      <Faded duration={1500}>
+        <SectionSide>
+          <Logo src={imgLogo} />
+          <Title>Welcome back!</Title>
+          <Paragraph>
+            Welcome to G7Bank, your trusted banking partner. Our secure and
+            user-friendly login page is designed to provide you with easy access
+            to your account information and help you manage your finances
+            conveniently.
+          </Paragraph>
+          <Ilustration src={ilustrationImg} />
+        </SectionSide>
+      </Faded>
+
       <Opening direction="right" duration={1500}>
         <SectionTwo>
           <SubTitle>Sign to your Account</SubTitle>

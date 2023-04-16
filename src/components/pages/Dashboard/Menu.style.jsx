@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 export const Menu = styled.aside`
   background-color: ${(prop) => prop.theme.colors.blackSecondary};
   width: 18%;
-  position: fixed;
-  top: 7rem;
   border-radius: 20px;
 `;
 export const List = styled.ul`

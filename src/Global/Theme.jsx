@@ -12,6 +12,7 @@ export const theme = {
     weakGray: "#808080",
   },
   length: {
+    values: '1.7rem',
     headingPrimary: "2.25rem",
     headingSecondory: "1.563rem",
     bodyText: "1rem",

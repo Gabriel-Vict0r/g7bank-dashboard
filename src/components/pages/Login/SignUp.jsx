@@ -20,6 +20,7 @@ import {
   LinkNetwork,
   ButtonSignUP,
   Opening,
+  Faded,
 } from "./Style";
 import { Logo } from "../../../Global/GeneralComponents";
 
@@ -31,23 +32,29 @@ import ilustrationImg from "../../../img/SignUpArt.svg";
 import { Link } from "react-router-dom";
 import { BiUserPin, BiLock } from "react-icons/bi";
 import { HiOutlineMail } from "react-icons/hi";
+import { useState, useEffect } from "react";
+import { Fade } from "react-awesome-reveal";
 
 const SignUp = () => {
-  function getForm() {}
+  function getForm() {
+    
+  }
   return (
     <Wrapper>
-      <SectionSide>
-        <Logo src={imgLogo} />
-        <Title>
-          Welcome to <span>G7Bank</span>
-        </Title>
-        <Paragraph>
-          Welcome to G7Bank, your trusted banking partner. Our sign-up page is
-          designed to make it easy for you to open an account and start managing
-          your finances with ease.
-        </Paragraph>
-        <Ilustration src={ilustrationImg} $secondary />
-      </SectionSide>
+      <Faded duration={1500}>
+        <SectionSide>
+          <Logo src={imgLogo} />
+          <Title>
+            Welcome to <span>G7Bank</span>
+          </Title>
+          <Paragraph>
+            Welcome to G7Bank, your trusted banking partner. Our sign-up page is
+            designed to make it easy for you to open an account and start
+            managing your finances with ease.
+          </Paragraph>
+          <Ilustration src={ilustrationImg} $secondary />
+        </SectionSide>
+      </Faded>
       <Opening direction="right" duration={1500}>
         <SectionTwo>
           <SubTitle>Create your new Account</SubTitle>
@@ -77,7 +84,7 @@ const SignUp = () => {
               </ContainerCheck>
               <Link to="/forgotPassword">Forgotton Password?</Link>
             </ContainerLabel>
-            <InputSend type="submit" value="Sign in" />
+            <InputSend type="submit" value="Sign up" />
           </FormLogin>
           <Paragraph>Sign in using your network</Paragraph>
           <ContainerNetworks>
