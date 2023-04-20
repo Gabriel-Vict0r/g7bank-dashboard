@@ -39,13 +39,13 @@ export const Date = styled.span`
   justify-self: end;
   align-self: center;
 `;
-export const Balance = styled.span`
+export const ValueBalance = styled.span`
   color: ${(prop) => prop.theme.colors.primary};
   font-size: ${(prop) => prop.theme.length.values};
   grid-area: balance;
   padding-top: 1.5rem;
 `;
-export const Earn = styled(Balance)`
+export const EarnValue = styled(ValueBalance)`
   grid-area: earning;
 `;
 export const Percent = styled.span`
@@ -55,7 +55,7 @@ export const Percent = styled.span`
   justify-self: end;
   align-self: center;
 `;
-export const Coin = styled(Balance)`
+export const Coin = styled(ValueBalance)`
   grid-area: coin;
   justify-self: end;
 `;

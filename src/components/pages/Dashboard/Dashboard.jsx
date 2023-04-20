@@ -1,18 +1,5 @@
 import React from "react";
-import {
-  Tittle,
-  Content,
-  Main,
-  CardBalance,
-  SubTitle,
-  WrapperCard,
-  Balance,
-  Coin,
-  CardEarn,
-  Date,
-  Earn,
-  Percent,
-} from "./Dashboard.style";
+import { Tittle, Content, Main, WrapperCard } from "./Dashboard.style";
 import {
   Header,
   SearchBar,
@@ -22,6 +9,8 @@ import {
   UserName,
 } from "./Header.style";
 import { Menu, List, Element } from "./Menu.style";
+import Balance from "../../CardBalance";
+import Earn from "../../CardEarn";
 import { Logo } from "../../../Global/GeneralComponents";
 import LogoSvg from "../../../img/logo.svg";
 import Login from "../Login/Login";
@@ -40,7 +29,6 @@ import { BsCalendar3Range, BsGraphUpArrow } from "react-icons/bs";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { RiListSettingsLine } from "react-icons/ri";
 import { BiTransfer } from "react-icons/bi";
-import { createElement } from "react";
 const Dashboard = () => {
   //Hook for management the color state from search Icon
   const [color, setColor] = useState(false);
@@ -107,17 +95,13 @@ const Dashboard = () => {
       <Content>
         <Tittle>Dashboard</Tittle>
         <WrapperCard>
-          <CardBalance>
-            <SubTitle>Current Balance</SubTitle>
-            <Balance>$12,000.00</Balance>
-            <Coin>USD</Coin>
-          </CardBalance>
-          <CardEarn>
-            <SubTitle>Earning</SubTitle>
-            <Date>Montly</Date>
-            <Earn>$5,000.00</Earn>
-            <Percent>+35.5%</Percent>
-          </CardEarn>
+          <Balance subtitle="Current Balance" balance="$12,000.00" coin="USD" />
+          <Earn
+            subtitle="Earning"
+            date="montly"
+            earn="$5,000.00"
+            percent="+35.5%"
+          />
         </WrapperCard>
       </Content>
     </Main>
