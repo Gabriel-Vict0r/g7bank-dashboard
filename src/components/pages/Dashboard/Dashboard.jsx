@@ -11,6 +11,7 @@ import {
 import { Menu, List, Element } from "./Menu.style";
 import Balance from "../../CardBalance";
 import Earn from "../../CardEarn";
+import Activity from "../../CardActivity";
 import { Logo } from "../../../Global/GeneralComponents";
 import LogoSvg from "../../../img/logo.svg";
 import Login from "../Login/Login";
@@ -97,11 +98,12 @@ const Dashboard = () => {
         <WrapperCard>
           <Balance subtitle="Current Balance" balance="$12,000.00" coin="USD" />
           <Earn
-            subtitle="Earning"
+            subTitle="Earning"
             date="montly"
             earn="$5,000.00"
             percent="+35.5%"
           />
+          <Activity subtitle="Weakly activity" />
         </WrapperCard>
       </Content>
     </Main>

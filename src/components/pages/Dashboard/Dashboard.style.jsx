@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import Balance from "../../CardBalance";
+import { Legend } from "recharts";
 export const Main = styled.body`
   display: flex;
   flex-direction: row;
@@ -19,20 +20,26 @@ export const Tittle = styled.h1`
 export const CardBalance = styled.div`
   background-color: ${(prop) => prop.theme.colors.blackSecondary};
   padding: 1rem;
-  width: 40%;
   border-radius: 0.7rem;
   display: grid;
   grid-template-areas:
     "title title"
     "balance coin";
   align-content: space-between;
+  grid-area: Balance;
+`;
+export const CardActivity = styled(CardBalance)`
+  width: 100%;
+  grid-template-areas: none;
+  display: block;
+  grid-area: Activity;
 `;
 export const CardEarn = styled(CardBalance)`
-  width: 60%;
   grid-template-areas:
     "title date"
     "earning percent";
   padding: 1.5rem;
+  grid-area: Earn;
 `;
 export const Date = styled.span`
   color: ${(prop) => prop.theme.colors.Title};
@@ -68,6 +75,10 @@ export const SubTitle = styled.h3`
 export const WrapperCard = styled.div`
   margin-top: 1rem;
   width: 50%;
-  display: flex;
+  display: grid;
+  grid-template-areas: 
+  "Balance Earn"
+  "Activity Activity";
   gap: 2rem;
+  grid-template-columns: 50% 50%;
 `;
