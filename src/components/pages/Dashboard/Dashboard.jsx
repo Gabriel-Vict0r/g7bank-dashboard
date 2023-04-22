@@ -1,5 +1,5 @@
 import React from "react";
-import { Tittle, Content, Main, WrapperCard } from "./Dashboard.style";
+import { Tittle, Content, Main, WrapperCard, WrapperTwo } from "./Dashboard.style";
 import {
   Header,
   SearchBar,
@@ -30,6 +30,7 @@ import { BsCalendar3Range, BsGraphUpArrow } from "react-icons/bs";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { RiListSettingsLine } from "react-icons/ri";
 import { BiTransfer } from "react-icons/bi";
+import TotalTransaction from "../../TotalTransaction";
 const Dashboard = () => {
   //Hook for management the color state from search Icon
   const [color, setColor] = useState(false);
@@ -94,7 +95,7 @@ const Dashboard = () => {
         </List>
       </Menu>
       <Content>
-        <Tittle>Dashboard</Tittle>
+        {/* <Tittle>Dashboard</Tittle> */}
         <WrapperCard>
           <Balance subtitle="Current Balance" balance="$12,000.00" coin="USD" />
           <Earn
@@ -105,6 +106,9 @@ const Dashboard = () => {
           />
           <Activity subtitle="Weakly activity" />
         </WrapperCard>
+        <WrapperTwo>
+          <TotalTransaction />
+        </WrapperTwo>
       </Content>
     </Main>
   );

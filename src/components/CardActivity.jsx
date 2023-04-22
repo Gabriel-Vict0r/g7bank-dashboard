@@ -1,4 +1,4 @@
-import { CardActivity, SubTitle} from "./pages/Dashboard/Dashboard.style";
+import { CardActivity, SubTitle } from "./pages/Dashboard/Dashboard.style";
 import React, { PureComponent } from "react";
 import {
   BarChart,
@@ -62,19 +62,22 @@ const Activity = ({ subtitle }) => {
         data={data}
         margin={{ top: 20, right: 20, left: 20, bottom: 5 }}
       >
-        <CartesianGrid strokeDasharray="3" strokeOpacity={0.1} />
+        <CartesianGrid
+          strokeDasharray="3"
+          strokeOpacity={0.1}
+        />
         <XAxis dataKey="name" tickMargin={15} />
         <YAxis tickMargin={15} />
         <Tooltip />
         <Legend
           iconSize={17}
           iconType="circle"
-          margin={{ top: 10, left: 0, right: 0, bottom: 5 }}
-          tickMargin={50}
-          height={50}
-          align='right'
-          verticalAlign='bottom'
-          display='inline-flex'
+          layout="horizontal"
+          margin={{ top: 25, left: 0, right: 0, bottom: 0 }}
+          height={40}
+          align="center"
+          verticalAlign="bottom"
+          wrapperStyle={{padding: 17}}
         />
         <Bar dataKey="in" fill="#0cce8d" radius={[100, 100, 0, 0]} />
         <Bar dataKey="out" fill="#2d42ba" radius={[100, 100, 0, 0]} />

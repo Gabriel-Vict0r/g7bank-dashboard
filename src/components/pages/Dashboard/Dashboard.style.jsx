@@ -10,8 +10,11 @@ export const Main = styled.body`
 `;
 export const Content = styled.main`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: start;
+  align-items: flex-start;
   width: 100%;
+  gap: 1rem;
 `;
 export const Tittle = styled.h1`
   color: ${(prop) => prop.theme.colors.Title};
@@ -40,6 +43,14 @@ export const CardEarn = styled(CardBalance)`
     "earning percent";
   padding: 1.5rem;
   grid-area: Earn;
+`;
+export const CardTransaction = styled(CardBalance)`
+  grid-template-areas:
+    "title date"
+    "Data Data";
+  padding: 1.5rem;
+  /* width: 100%; */
+  grid-area: Transaction;
 `;
 export const Date = styled.span`
   color: ${(prop) => prop.theme.colors.Title};
@@ -76,9 +87,17 @@ export const WrapperCard = styled.div`
   margin-top: 1rem;
   width: 50%;
   display: grid;
-  grid-template-areas: 
-  "Balance Earn"
-  "Activity Activity";
+  grid-template-areas:
+    "Balance Earn"
+    "Activity Activity";
   gap: 2rem;
   grid-template-columns: 50% 50%;
+`;
+export const WrapperTwo = styled(WrapperCard)`
+  grid-template-areas:
+    "Transaction"
+    "Transfer";
+    margin-left: 3rem;
+    height: 100%;
+    grid-template-rows: 50% 50%;
 `;
