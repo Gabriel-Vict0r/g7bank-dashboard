@@ -95,7 +95,7 @@ const Dashboard = () => {
         </List>
       </Menu>
       <Content>
-        {/* <Tittle>Dashboard</Tittle> */}
+        <Tittle>Dashboard</Tittle>
         <WrapperCard>
           <Balance subtitle="Current Balance" balance="$12,000.00" coin="USD" />
           <Earn

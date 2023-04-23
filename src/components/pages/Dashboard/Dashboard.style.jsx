@@ -9,15 +9,16 @@ export const Main = styled.body`
   width: 100%;
 `;
 export const Content = styled.main`
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: flex-start;
+  display: grid;
+  grid-template-areas:
+  "titPag titPag"
+  "activity transactions";
   width: 100%;
-  gap: 1rem;
+  column-gap: 4rem;
 `;
 export const Tittle = styled.h1`
   color: ${(prop) => prop.theme.colors.Title};
+  grid-area: titPag;
   letter-spacing: 2px;
 `;
 export const CardBalance = styled.div`
@@ -49,13 +50,15 @@ export const CardTransaction = styled(CardBalance)`
     "title date"
     "Data Data";
   padding: 1.5rem;
-  /* width: 100%; */
+  width: 100%;
+  gap: 1rem;
   grid-area: Transaction;
 `;
 export const Date = styled.span`
   color: ${(prop) => prop.theme.colors.Title};
   justify-self: end;
   align-self: center;
+  grid-area: date;
 `;
 export const ValueBalance = styled.span`
   color: ${(prop) => prop.theme.colors.primary};
@@ -84,8 +87,9 @@ export const SubTitle = styled.h3`
   font-weight: 400;
 `;
 export const WrapperCard = styled.div`
+  grid-area: activity;
   margin-top: 1rem;
-  width: 50%;
+  width: 100%;
   display: grid;
   grid-template-areas:
     "Balance Earn"
@@ -93,11 +97,14 @@ export const WrapperCard = styled.div`
   gap: 2rem;
   grid-template-columns: 50% 50%;
 `;
-export const WrapperTwo = styled(WrapperCard)`
+export const WrapperTwo = styled.div`
+  grid-area: transactions;
+  margin-top: 1rem;
+  width: 93%;
   grid-template-areas:
     "Transaction"
     "Transfer";
-    margin-left: 3rem;
-    height: 100%;
-    grid-template-rows: 50% 50%;
+  /* margin-left: 3rem; */
+  height: 100%;
+  grid-template-rows: 50% 50%;
 `;
