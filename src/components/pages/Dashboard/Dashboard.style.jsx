@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import Balance from "../../CardBalance";
-import { Legend } from "recharts";
 export const Main = styled.body`
   display: flex;
   flex-direction: row;
@@ -54,6 +52,9 @@ export const CardTransaction = styled(CardBalance)`
   gap: 1rem;
   grid-area: Transaction;
 `;
+export const WrapperTransaction = styled.div`
+  grid-area: Data;
+`
 export const Date = styled.span`
   color: ${(prop) => prop.theme.colors.Title};
   justify-self: end;
