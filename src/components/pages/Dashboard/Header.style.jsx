@@ -1,5 +1,15 @@
 import styled from "styled-components";
-
+import { keyframes } from "styled-components";
+const revealHeader = keyframes`
+  0% { 
+    top: -300px;
+    height: 0;
+  }
+  100% {
+    top: 0;
+    height: 10%;
+  }
+`;
 export const Header = styled.header`
   width: 100%;
   position: fixed;
@@ -11,7 +21,9 @@ export const Header = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  animation: ${revealHeader} 1s forwards ease-in-out;
 `;
+
 export const ContainerSearch = styled.div`
   width: 30%;
   display: flex;

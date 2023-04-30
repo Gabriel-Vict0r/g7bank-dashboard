@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Fade } from "react-awesome-reveal";
 
-export const Menu = styled.aside`
+export const Menu = styled(Fade)`
   background-color: ${(prop) => prop.theme.colors.blackSecondary};
   width: 18%;
   border-radius: 20px;

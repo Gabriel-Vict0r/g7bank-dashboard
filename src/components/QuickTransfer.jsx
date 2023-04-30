@@ -22,7 +22,7 @@ const QuickTransfer = () => {
             <InputIcon />
           <InputAccount type="number" placeholder="Bank Number" />
           <ContainerInputs>
-            <InputAmount type="number" placeholder="Amount" />
+            <InputAmount type="number" placeholder="Amount"/>
             <InputSend type="submit" value="Send" />
           </ContainerInputs>
         </FormTransfer>

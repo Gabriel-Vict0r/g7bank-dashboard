@@ -84,6 +84,7 @@ const Dashboard = () => {
           <UserName>Gabriel Victor</UserName>
         </InfoProfile>
       </Header>
+      
       <Menu>
         <List>
           {/* Mapping the const MenuLinks*/}
