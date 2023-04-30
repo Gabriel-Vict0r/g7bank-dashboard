@@ -10,6 +10,7 @@ export const theme = {
     inputStrock: "#282323",
     grayThirty: "#9fa5b6",
     weakGray: "#808080",
+    borderInput: '#80808036'
   },
   length: {
     values: '1.7rem',

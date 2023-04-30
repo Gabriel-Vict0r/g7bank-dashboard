@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { BiTransfer } from "react-icons/bi";
+import { RiAccountPinBoxLine } from "react-icons/ri";
 export const Main = styled.body`
   display: flex;
   flex-direction: row;
@@ -9,8 +11,8 @@ export const Main = styled.body`
 export const Content = styled.main`
   display: grid;
   grid-template-areas:
-  "titPag titPag"
-  "activity transactions";
+    "titPag titPag"
+    "activity transactions";
   width: 100%;
   column-gap: 4rem;
 `;
@@ -18,6 +20,13 @@ export const Tittle = styled.h1`
   color: ${(prop) => prop.theme.colors.Title};
   grid-area: titPag;
   letter-spacing: 2px;
+`;
+export const Icon = styled(BiTransfer)`
+  grid-area: icon;
+  justify-self: start;
+  align-self: center;
+  color: ${(prop) => prop.theme.colors.body};
+  font-size: 1.5rem;
 `;
 export const CardBalance = styled.div`
   background-color: ${(prop) => prop.theme.colors.blackSecondary};
@@ -47,19 +56,89 @@ export const CardTransaction = styled(CardBalance)`
   grid-template-areas:
     "title date"
     "Data Data";
-  padding: 1.5rem;
   width: 100%;
   gap: 1rem;
   grid-area: Transaction;
 `;
+const displayFlex = `
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1rem;
+`;
+export const CardTransfer = styled(CardBalance)`
+  ${displayFlex};
+  width: 100%;
+  padding: 1.8rem;
+  gap: 1rem;
+  grid-area: Transfer;
+`;
+export const ContainerHeader = styled.div`
+  ${displayFlex};
+  align-items: start;
+  flex-direction: row;
+`;
+export const ContainerInputs = styled(ContainerHeader)`
+  width: 100%;
+`;
+export const FormTransfer = styled.form`
+  ${displayFlex};
+  position: relative;
+  width: 100%;
+`;
+export const InputAccount = styled.input`
+  background-color: ${(prop) => prop.theme.colors.bgFullDark};
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid ${(prop) => prop.theme.colors.borderInput};
+  text-indent: 1rem;
+  font-size: ${(prop) => prop.theme.length.buttonText};
+  color: ${(prop) => prop.theme.colors.body};
+  &:focus {
+    outline: none;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  -moz-appearance: textfield;
+`;
+export const InputIcon = styled(RiAccountPinBoxLine)`
+  color: ${(prop) => prop.theme.colors.weakGray};
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  bottom: 4.7rem;
+`;
+export const InputAmount = styled(InputAccount)`
+  width: 70%;
+`;
+export const InputSend = styled(InputAccount)`
+  font-weight: 400;
+  font-size: ${(prop) => prop.theme.length.textHeader};
+  letter-spacing: 2px;
+  text-indent: 0;
+  width: 30%;
+  background-color: ${(prop) => prop.theme.colors.primary};
+  border: none;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+  }
+`;
 export const WrapperTransaction = styled.div`
   grid-area: Data;
-`
+`;
 export const Date = styled.span`
   color: ${(prop) => prop.theme.colors.Title};
   justify-self: end;
   align-self: center;
   grid-area: date;
+  margin-right: 1rem;
 `;
 export const ValueBalance = styled.span`
   color: ${(prop) => prop.theme.colors.primary};
@@ -102,10 +181,12 @@ export const WrapperTwo = styled.div`
   grid-area: transactions;
   margin-top: 1rem;
   width: 93%;
+  display: grid;
   grid-template-areas:
     "Transaction"
     "Transfer";
   /* margin-left: 3rem; */
-  height: 100%;
-  grid-template-rows: 50% 50%;
+  height: 97%;
+  gap: 2rem;
+  grid-template-rows: 60% 35%;
 `;

@@ -16,7 +16,7 @@ const TotalTransaction = () => {
       <SubTitle>Transaction</SubTitle>
       <Date>Yearly</Date>
       <WrapperTransaction>
-        <PieChart width={370} height={280} >
+        <PieChart width={440} height={280} >
           <Pie
             data={data}
             dataKey="value"
@@ -30,27 +30,26 @@ const TotalTransaction = () => {
             strokeLinejoin="miter"
             strokeWidth={2}
             textLength={40}
-            textRendering={{fill: '#000'}}
-
           >
             {data.map((entry) => (
               <Cell
                 nameKey={entry.name}
                 dataKey={entry.value}
                 fill={entry.color}
-                color="#000"
                 textAnchor="middle"
+                strokeLinecap="butt"
+                
               />
             ))}
           </Pie>
           <Legend
             iconSize={17}
             iconType="circle"
-            layout="horizontal"
+            layout="vertical"
             height={40}
-            align="center"
+            align="right"
             verticalAlign="bottom"
-            wrapperStyle={{ padding: 15}}
+            wrapperStyle={{ paddingBottom: 18, paddingLeft: 28}}
           />
         </PieChart>
       </WrapperTransaction>

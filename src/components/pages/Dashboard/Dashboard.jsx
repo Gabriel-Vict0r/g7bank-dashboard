@@ -31,6 +31,7 @@ import { FaFileInvoiceDollar } from "react-icons/fa";
 import { RiListSettingsLine } from "react-icons/ri";
 import { BiTransfer } from "react-icons/bi";
 import TotalTransaction from "../../TotalTransaction";
+import QuickTransfer from "../../QuickTransfer";
 const Dashboard = () => {
   //Hook for management the color state from search Icon
   const [color, setColor] = useState(false);
@@ -108,6 +109,7 @@ const Dashboard = () => {
         </WrapperCard>
         <WrapperTwo>
           <TotalTransaction />
+          <QuickTransfer />
         </WrapperTwo>
       </Content>
     </Main>
