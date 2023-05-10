@@ -1,13 +1,7 @@
 import styled from "styled-components";
 import { BiTransfer } from "react-icons/bi";
 import { RiAccountPinBoxLine } from "react-icons/ri";
-export const Main = styled.body`
-  display: flex;
-  flex-direction: row;
-  margin-top: 7rem;
-  gap: 2rem;
-  width: 100%;
-`;
+
 export const Content = styled.main`
   display: grid;
   grid-template-areas:
@@ -15,11 +9,6 @@ export const Content = styled.main`
     "activity transactions";
   width: 100%;
   column-gap: 4rem;
-`;
-export const Tittle = styled.h1`
-  color: ${(prop) => prop.theme.colors.Title};
-  grid-area: titPag;
-  letter-spacing: 2px;
 `;
 export const Icon = styled(BiTransfer)`
   grid-area: icon;
