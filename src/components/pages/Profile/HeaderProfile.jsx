@@ -1,11 +1,16 @@
 import React from "react";
-import { ImageProfile } from "../../Header.style";
-import { HeaderPro, Name, Professional, WrapperInfs } from "./Profile.style";
+import {
+  HeaderPro,
+  Name,
+  Professional,
+  WrapperInfs,
+  ImgProfile,
+} from "./Profile.style";
 const HeaderProfile = ({ name, img, professional }) => {
   return (
     <HeaderPro>
       <WrapperInfs>
-        <ImageProfile src={img} />
+        <ImgProfile src={img} alt="imagem profile" />
         <Name>{name}</Name>
         <Professional>{professional}</Professional>
       </WrapperInfs>

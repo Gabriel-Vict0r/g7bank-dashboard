@@ -10,10 +10,10 @@ const Profile = () => {
       <HeaderComponent />
       <MenuComponent />
       <Content>
-              <Tittle>Profile</Tittle>
-              <Wrapper>
-                  <HeaderProfile />
-              </Wrapper>
+        <Tittle>Profile</Tittle>
+        <Wrapper>
+          <HeaderProfile img="https://avatars.githubusercontent.com/u/46754034?s=96&v=4" name='Gabriel Victor' professional='Dev Web'/>
+        </Wrapper>
       </Content>
     </Main>
   );
