@@ -4,8 +4,11 @@ import {
   Name,
   Professional,
   WrapperInfs,
+  WrapperButton,
   ImgProfile,
+  ButtonEdit,
 } from "./Profile.style";
+import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 const HeaderProfile = ({ name, img, professional }) => {
   return (
     <HeaderPro>
@@ -14,6 +17,12 @@ const HeaderProfile = ({ name, img, professional }) => {
         <Name>{name}</Name>
         <Professional>{professional}</Professional>
       </WrapperInfs>
+      <WrapperButton>
+        <ButtonEdit>
+          <HiOutlineAdjustmentsHorizontal />
+          Edit Profile
+        </ButtonEdit>
+      </WrapperButton>
     </HeaderPro>
   );
 };

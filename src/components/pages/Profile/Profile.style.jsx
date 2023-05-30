@@ -25,17 +25,45 @@ export const WrapperInfs = styled.div`
     "img professional";
   grid-template-columns: 30% 50%;
 `;
+export const WrapperButton = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+`;
+export const ButtonEdit = styled.button`
+  width: 40%;
+  height: 55px;
+  letter-spacing: 1px;
+  font-size: ${(prop) => prop.theme.length.textHeader};
+  background-color: ${(prop) => prop.theme.colors.primary};
+  color: ${(prop) => prop.theme.colors.body};
+  border-radius: 0.287rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+  }
+  transition: all 0.3s ease-in-out;
+  & svg {
+    font-size: 1.6rem;
+  }
+`;
 export const ImgProfile = styled.img`
   width: 70%;
   grid-area: img;
   justify-self: center;
   border-radius: 5rem;
-`
+`;
 export const Name = styled(Tittle)`
   font-weight: 400;
   grid-area: name;
   align-self: end;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 `;
 export const Professional = styled.span`
   font-weight: 300;
