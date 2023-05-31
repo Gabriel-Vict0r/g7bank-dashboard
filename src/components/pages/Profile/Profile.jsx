@@ -18,5 +18,4 @@ const Profile = () => {
     </Main>
   );
 };
-
 export default Profile;

@@ -1,22 +1,30 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 import { Tittle } from "../../../Global/GeneralComponents";
 export const Wrapper = styled.div`
   background-color: ${(prop) => prop.theme.colors.blackSecondary};
   width: 97%;
   height: 90%;
   border-radius: 0.785rem;
-  padding: 2rem;
+  padding: 2rem 0;
 `;
 export const Content = styled.section`
   width: 100%;
 `;
+const border = css`
+  border-bottom: 1px solid ${(prop) => prop.theme.colors.body};
+`;
+
 export const HeaderPro = styled.header`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  ${border};
+  padding: 1.5rem 2rem;
 `;
+
 export const WrapperInfs = styled.div`
   width: 50%;
   display: grid;
