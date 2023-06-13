@@ -79,3 +79,16 @@ export const Professional = styled.span`
   grid-area: professional;
   align-self: start;
 `;
+
+export const WrapperContact = styled.article`
+  padding: 4rem;
+`
+export const WrapperInfoProfile = styled.div`
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  p {
+    color: ${(prop) => prop.theme.colors.body};
+    font-size: ${(prop) => prop.theme.length.bodyText};
+  }
+`;
