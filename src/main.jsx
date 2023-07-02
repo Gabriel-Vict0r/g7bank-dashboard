@@ -14,7 +14,6 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./Global/Theme";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Profile from "./components/pages/Profile/Profile";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,13 +24,13 @@ const router = createBrowserRouter([
     element: <SignUp />,
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <Dashboard />,
   },
   {
-    path: '/profile',
-    element: <Profile />
-  }
+    path: "/profile",
+    element: <Profile />,
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

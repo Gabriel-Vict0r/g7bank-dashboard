@@ -7,16 +7,42 @@ import {
   WrapperTransaction,
 } from "./pages/Dashboard/Dashboard.style";
 const data = [
-  { name: "In", value: 900, color: "#0cce8d" },
-  { name: "Out", value: 600, color: "#2d42ba" },
+  {
+    name: "In",
+    value: 900,
+    color: "#0DCB8B",
+  },
+  { name: "Out", value: 600, color: "#2D43BB" },
 ];
+const colors = [
+  { start: "#093f2d", end: "#0DCB8B" },
+  { start: "#141e4e", end: "#2D43BB" },
+];
+const renderColorfulLengedText = (value, entry) => {
+  const { color } = entry;
+  return <span style={{ color }}>{value}</span>;
+};
 const TotalTransaction = () => {
   return (
     <CardTransaction>
       <SubTitle>Transaction</SubTitle>
       <Date>Yearly</Date>
       <WrapperTransaction>
-        <PieChart width={440} height={280} >
+        <PieChart width={440} height={280}>
+          <defs>
+            {data.map((entry, index) => (
+              <radialGradient id={`myGradient${index}`}>
+                <stop
+                  offset="0%"
+                  stopColor={colors[index % colors.length].start}
+                />
+                <stop
+                  offset="100%"
+                  stopColor={colors[index % colors.length].end}
+                />
+              </radialGradient>
+            ))}
+          </defs>
           <Pie
             data={data}
             dataKey="value"
@@ -30,15 +56,16 @@ const TotalTransaction = () => {
             strokeLinejoin="miter"
             strokeWidth={2}
             textLength={40}
+            fill="#ffff"
           >
-            {data.map((entry) => (
+            {data.map((entry, index) => (
               <Cell
                 nameKey={entry.name}
                 dataKey={entry.value}
-                fill={entry.color}
+                fill={`url(#myGradient${index})`}
                 textAnchor="middle"
                 strokeLinecap="butt"
-                
+                color="#fff"
               />
             ))}
           </Pie>
@@ -49,12 +76,12 @@ const TotalTransaction = () => {
             height={40}
             align="right"
             verticalAlign="bottom"
-            wrapperStyle={{ paddingBottom: 18, paddingLeft: 28}}
+            wrapperStyle={{ paddingBottom: 18, paddingLeft: 28 }}
+            formatter={renderColorfulLengedText}
           />
         </PieChart>
       </WrapperTransaction>
     </CardTransaction>
   );
 };
-
 export default TotalTransaction;
