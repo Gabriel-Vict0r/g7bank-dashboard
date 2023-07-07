@@ -13,6 +13,7 @@ const revealHeader = keyframes`
 export const Header = styled.header`
   width: 100%;
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   height: 10%;

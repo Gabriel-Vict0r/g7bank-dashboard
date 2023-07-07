@@ -81,14 +81,32 @@ export const Professional = styled.span`
 `;
 
 export const WrapperContact = styled.article`
+  gap: 1rem;
+  max-width: 100%;
   padding: 4rem;
-`
+`;
+//const direction = "row";
 export const WrapperInfoProfile = styled.div`
   display: flex;
+  flex-direction: ${(props) => props.direction};
   gap: 2rem;
   padding: 1rem;
   p {
     color: ${(prop) => prop.theme.colors.body};
     font-size: ${(prop) => prop.theme.length.bodyText};
   }
+`;
+export const Column = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+export const BlockColumns = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;

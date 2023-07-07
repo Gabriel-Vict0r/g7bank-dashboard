@@ -6,7 +6,7 @@ import {
   Date,
   WrapperTransaction,
 } from "./pages/Dashboard/Dashboard.style";
-const data = [
+let data = [
   {
     name: "In",
     value: 900,
@@ -14,13 +14,15 @@ const data = [
   },
   { name: "Out", value: 600, color: "#2D43BB" },
 ];
+console.log(data[0].color);
 const colors = [
   { start: "#093f2d", end: "#0DCB8B" },
   { start: "#141e4e", end: "#2D43BB" },
 ];
 const renderColorfulLengedText = (value, entry) => {
-  const { color } = entry;
-  return <span style={{ color }}>{value}</span>;
+  const { color } = entry.payload.color;
+  console.log(`'${entry.payload.color}'`);
+  return <span style={{ color: entry.payload.color }}>{value}</span>;
 };
 const TotalTransaction = () => {
   return (
@@ -56,7 +58,6 @@ const TotalTransaction = () => {
             strokeLinejoin="miter"
             strokeWidth={2}
             textLength={40}
-            fill="#ffff"
           >
             {data.map((entry, index) => (
               <Cell
@@ -65,7 +66,7 @@ const TotalTransaction = () => {
                 fill={`url(#myGradient${index})`}
                 textAnchor="middle"
                 strokeLinecap="butt"
-                color="#fff"
+                color={entry.color}
               />
             ))}
           </Pie>

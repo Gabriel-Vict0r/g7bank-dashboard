@@ -4,7 +4,7 @@ import MenuComponent from "../../Menu";
 import { Main, Tittle } from "../../../Global/GeneralComponents";
 import { Wrapper, Content } from "./Profile.style";
 import HeaderProfile from "./HeaderProfile";
-import ContactDetails from "./BasicContact";
+import { ContactDetails, Address } from "./BasicContact";
 const Profile = () => {
   return (
     <Main>
@@ -19,11 +19,21 @@ const Profile = () => {
             professional="Dev Web"
           />
           <ContactDetails
+            tittle="Basic & Contact Details"
             name="gabriel"
             lastName="victor"
             userName="gabriel-vict0r"
             email="victorgabriel1730@gmail.com"
             phone="(77) 99903-0842"
+          />
+          <Address
+            tittle="Address"
+            presentAddress="Rua Joaquim Neto, n°336"
+            permaAddress="Rua Joaquim Neto, n°336"
+            country='Brasil'
+            state='Bahia'
+            city='Barreiras'
+            zipCode='47801-028'
           />
         </Wrapper>
       </Content>
