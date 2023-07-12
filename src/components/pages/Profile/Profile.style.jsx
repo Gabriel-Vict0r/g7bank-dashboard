@@ -38,6 +38,7 @@ export const WrapperButton = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+
 export const ButtonEdit = styled.button`
   width: 40%;
   height: 55px;
@@ -60,6 +61,10 @@ export const ButtonEdit = styled.button`
   & svg {
     font-size: 1.6rem;
   }
+`;
+export const BtnDiscart = styled(ButtonEdit)`
+  background: transparent;
+  color: ${(prop) => prop.theme.colors.thirty};
 `;
 export const ImgProfile = styled.img`
   width: 70%;

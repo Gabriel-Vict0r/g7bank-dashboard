@@ -8,6 +8,7 @@ import {
   WrapperButton,
   ImgProfile,
   ButtonEdit,
+  BtnDiscart,
 } from "./Profile.style";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 import { useContext } from "react";
@@ -23,10 +24,17 @@ const HeaderProfile = ({ name, img, professional }) => {
         <Professional>{professional}</Professional>
       </WrapperInfs>
       <WrapperButton>
-        <ButtonEdit onClick={() => setEdit(true)}>
-          <HiOutlineAdjustmentsHorizontal />
-          Edit Profile
-        </ButtonEdit>
+        {!edit ? (
+          <ButtonEdit onClick={() => setEdit(true)}>
+            <HiOutlineAdjustmentsHorizontal />
+            Edit Profile
+          </ButtonEdit>
+        ) : (
+          <>
+            <BtnDiscart onClick={() => setEdit(false)}>Discart Changes</BtnDiscart>
+            <ButtonEdit>Save Changes</ButtonEdit>
+          </>
+        )}
       </WrapperButton>
     </HeaderPro>
   );

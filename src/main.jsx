@@ -14,6 +14,8 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./Global/Theme";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Profile from "./components/pages/Profile/Profile";
+import AssetAndBalance from "./components/pages/Wallet/Asset&Balance";
+import CardManagement from "./components/pages/Wallet/CardManagement";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/AssetAndBalance",
+    element: <AssetAndBalance />,
+  },
+  {
+    path: "/CardManagement",
+    element: <CardManagement />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(

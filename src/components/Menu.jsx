@@ -1,5 +1,5 @@
-import React from 'react'
-import { Menu, List, Element } from "./Menu.style";
+import React from "react";
+import { Menu, List, Element, subElement } from "./Menu.style";
 import {
   MdOutlineDashboard,
   MdOutlineCurrencyExchange,
@@ -11,50 +11,45 @@ import { BsCalendar3Range, BsGraphUpArrow } from "react-icons/bs";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { RiListSettingsLine } from "react-icons/ri";
 import { BiTransfer } from "react-icons/bi";
+import { useState } from "react";
 const MenuComponent = () => {
-    const menuLinks = [
-      {
-        content: "Dashboard",
-        route: "/dashboard",
-        icon: <MdOutlineDashboard />,
-      },
-      { content: "Profile", route: "/profile", icon: <CgProfile /> },
-      {
-        content: "My Wallet",
-        submenus: [
-          { content: "Asset & balance", route: "/assetBalance" },
-          { content: "Card management", route: "/cardManagement" },
-        ],
-        icon: <CiWallet />,
-      },
-      { content: "Calendar", route: "/calendar", icon: <BsCalendar3Range /> },
-      { content: "Transfer", route: "/transfer", icon: <BiTransfer /> },
-      {
-        content: "Transaction",
-        route: "/transaction",
-        icon: <BsGraphUpArrow />,
-      },
-      {
-        content: "Exchange",
-        route: "/exchange",
-        icon: <MdOutlineCurrencyExchange />,
-      },
-      { content: "Contacts", route: "/contacts", icon: <MdOutlineContacts /> },
-      { content: "Setting", route: "/setting", icon: <RiListSettingsLine /> },
-    ];
+  const [showWallet, setWallets] = useState(false);
   return (
     <Menu>
       <List>
-        {/* Mapping the const MenuLinks*/}
-        {menuLinks.map((el) => (
-          <Element to={el.route}>
-            {el.icon}
-            {el.content}
-          </Element>
-        ))}
+        <Element to="/dashboard">
+          <MdOutlineDashboard />
+          dashboard
+        </Element>
+        <Element to="/profile">
+          <CgProfile />
+          Profile
+        </Element>
+        <Element onClick={() => setWallets(true)}>
+          <CiWallet />
+          Wallet
+        </Element>
+        <subElement>Asset & Balance</subElement>
+        <subElement>Card management</subElement>
+        <Element to="/transaction">
+          <BsGraphUpArrow />
+          Transaction
+        </Element>
+        <Element to="/Exchange">
+          <MdOutlineCurrencyExchange />
+          exchange
+        </Element>
+        <Element to="/contacts">
+          <MdOutlineContacts />
+          Contacts
+        </Element>
+        <Element to="/setting">
+          <RiListSettingsLine />
+          Setting
+        </Element>
       </List>
     </Menu>
   );
-}
+};
 
-export default MenuComponent
+export default MenuComponent;

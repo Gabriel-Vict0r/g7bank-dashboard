@@ -16,7 +16,6 @@ export const List = styled.ul`
   gap: 1rem;
   list-style: none;
 `;
-
 export const Element = styled(Link)`
   text-decoration: none;
   color: white;
@@ -36,4 +35,7 @@ export const Element = styled(Link)`
   &:hover {
     background-color: #292929;
   }
+`;
+export const subElement = styled(Element)`
+  
 `;
