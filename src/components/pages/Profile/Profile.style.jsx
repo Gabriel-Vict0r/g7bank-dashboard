@@ -88,12 +88,28 @@ export const WrapperContact = styled.article`
 //const direction = "row";
 export const WrapperInfoProfile = styled.div`
   display: flex;
-  flex-direction: ${(props) => props.direction};
+  flex-direction: row;
   gap: 2rem;
   padding: 1rem;
   p {
     color: ${(prop) => prop.theme.colors.body};
     font-size: ${(prop) => prop.theme.length.bodyText};
+  }
+`;
+export const WrapperEditInfo = styled(WrapperInfoProfile)`
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 90%;
+  input {
+    width: 80%;
+    height: 2.8rem;
+    padding: 0.5rem;
+    border-radius: 0.258rem;
+    border: 1px solid ${(prop) => prop.theme.colors.borderInput};
+    background-color: ${(prop) => prop.theme.colors.bgFullDark};
+    outline: none;
+    color: ${(prop) => prop.theme.colors.body};
+    font-size: ${(prop) => prop.theme.length.buttonText};
   }
 `;
 export const Column = styled.div`

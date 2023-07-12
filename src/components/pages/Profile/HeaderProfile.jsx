@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   HeaderPro,
   Name,
@@ -9,7 +10,11 @@ import {
   ButtonEdit,
 } from "./Profile.style";
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
+import { useContext } from "react";
+import { BtnEditProfile } from "../../Contexts/BtnEditProfile";
 const HeaderProfile = ({ name, img, professional }) => {
+  const { edit, setEdit } = useContext(BtnEditProfile);
+  console.log(edit);
   return (
     <HeaderPro>
       <WrapperInfs>
@@ -18,7 +23,7 @@ const HeaderProfile = ({ name, img, professional }) => {
         <Professional>{professional}</Professional>
       </WrapperInfs>
       <WrapperButton>
-        <ButtonEdit>
+        <ButtonEdit onClick={() => setEdit(true)}>
           <HiOutlineAdjustmentsHorizontal />
           Edit Profile
         </ButtonEdit>

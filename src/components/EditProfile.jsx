@@ -1,11 +1,11 @@
 import React from "react";
-import { WrapperInfoProfile } from "./pages/Profile/Profile.style";
-const EditProfile = ({ nameParam, param, direction }) => {
+import { WrapperEditInfo } from "./pages/Profile/Profile.style";
+const EditProfile = ({ nameParam, param, inputType }) => {
   return (
-    <WrapperInfoProfile $direction="column">
+    <WrapperEditInfo>
       <p>{nameParam}</p>
-      <input type="text" name="text" id="text" />
-    </WrapperInfoProfile>
+      <input type={inputType} name="text" id="text" />
+    </WrapperEditInfo>
   );
 };
 

@@ -14,14 +14,12 @@ let data = [
   },
   { name: "Out", value: 600, color: "#2D43BB" },
 ];
-console.log(data[0].color);
 const colors = [
   { start: "#093f2d", end: "#0DCB8B" },
   { start: "#141e4e", end: "#2D43BB" },
 ];
 const renderColorfulLengedText = (value, entry) => {
   const { color } = entry.payload.color;
-  console.log(`'${entry.payload.color}'`);
   return <span style={{ color: entry.payload.color }}>{value}</span>;
 };
 const TotalTransaction = () => {
