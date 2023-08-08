@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, List, Element, subElement } from "./Menu.style";
+import { Menu, List, Element, SubElement } from "./Menu.style";
 import {
   MdOutlineDashboard,
   MdOutlineCurrencyExchange,
@@ -14,6 +14,23 @@ import { BiTransfer } from "react-icons/bi";
 import { useState } from "react";
 const MenuComponent = () => {
   const [showWallet, setWallets] = useState(false);
+  const [colorOne, setColorOne] = useState(false);
+  const [colorTwo, setColorTwo] = useState(false);
+  const changeColor = () => {
+    if (!colorOne) {
+      setColorOne(true);
+      setColorTwo(false);
+    }
+  };
+  const changeColorTwo = () => {
+    if (!colorTwo) {
+      setColorTwo(true);
+      setColorOne(false);
+    }
+  };
+  const showSubmenuus = () => {
+    showWallet ? setWallets(false) : setWallets(true);
+  };
   return (
     <Menu>
       <List>
@@ -25,12 +42,28 @@ const MenuComponent = () => {
           <CgProfile />
           Profile
         </Element>
-        <Element onClick={() => setWallets(true)}>
+        <Element onClick={showSubmenuus}>
           <CiWallet />
           Wallet
         </Element>
-        <subElement>Asset & Balance</subElement>
-        <subElement>Card management</subElement>
+        {showWallet && (
+          <>
+            <SubElement
+              $colorElement={colorOne}
+              to="/AssetAndBalance"
+              onClick={changeColor}
+            >
+              Asset & Balance
+            </SubElement>
+            <SubElement
+              $colorElement={colorTwo}
+              to="/CardManagement"
+              onClick={changeColorTwo}
+            >
+              Card management
+            </SubElement>
+          </>
+        )}
         <Element to="/transaction">
           <BsGraphUpArrow />
           Transaction

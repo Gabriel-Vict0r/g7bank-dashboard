@@ -36,6 +36,10 @@ export const Element = styled(Link)`
     background-color: #292929;
   }
 `;
-export const subElement = styled(Element)`
-  
+export const SubElement = styled(Link)`
+  color: ${(props) =>
+    props.$colorElement ? props.theme.colors.primary : props.theme.colors.body};
+  text-decoration: none;
+  //padding: 0px 3rem;
+  text-indent: 5.5rem;
 `;
