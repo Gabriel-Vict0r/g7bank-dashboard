@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Menu, List, Element, SubElement } from "./Menu.style";
 import {
   MdOutlineDashboard,
@@ -12,10 +12,29 @@ import { FaFileInvoiceDollar } from "react-icons/fa";
 import { RiListSettingsLine } from "react-icons/ri";
 import { BiTransfer } from "react-icons/bi";
 import { useState } from "react";
+import { ShowPages } from "./Contexts/ShowPages";
 const MenuComponent = () => {
   const [showWallet, setWallets] = useState(false);
   const [colorOne, setColorOne] = useState(false);
   const [colorTwo, setColorTwo] = useState(false);
+
+  const {
+    show,
+    setShow,
+    showProfile,
+    setShowProfile,
+    shoWallet,
+    setShoWallet,
+  } = useContext(ShowPages);
+  const changePages = (e) => {
+    if (e === "dashboard") {
+      setShowProfile(false);
+      setShow(true);
+    } else if (e === "Profile") {
+      setShow(false);
+      setShowProfile(true);
+    }
+  };
   const changeColor = () => {
     if (!colorOne) {
       setColorOne(true);
@@ -34,11 +53,11 @@ const MenuComponent = () => {
   return (
     <Menu>
       <List>
-        <Element to="/dashboard">
+        <Element onClick={(e) => changePages((e = "dashboard"))}>
           <MdOutlineDashboard />
           dashboard
         </Element>
-        <Element to="/profile">
+        <Element onClick={(e) => changePages((e = "Profile"))}>
           <CgProfile />
           Profile
         </Element>
@@ -48,11 +67,7 @@ const MenuComponent = () => {
         </Element>
         {showWallet && (
           <>
-            <SubElement
-              $colorElement={colorOne}
-              to="/AssetAndBalance"
-              onClick={changeColor}
-            >
+            <SubElement $colorElement={colorOne} onClick={changeColor}>
               Asset & Balance
             </SubElement>
             <SubElement
@@ -84,5 +99,4 @@ const MenuComponent = () => {
     </Menu>
   );
 };
-
 export default MenuComponent;
