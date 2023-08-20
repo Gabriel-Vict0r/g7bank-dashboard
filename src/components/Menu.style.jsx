@@ -42,4 +42,8 @@ export const SubElement = styled(Link)`
   text-decoration: none;
   //padding: 0px 3rem;
   text-indent: 5.5rem;
+  &:hover {
+    color: ${(prop) => prop.theme.colors.primary};
+    transition: all .2s ease-in-out;
+  }
 `;

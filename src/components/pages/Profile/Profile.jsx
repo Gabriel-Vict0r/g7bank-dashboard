@@ -10,7 +10,7 @@ const Profile = () => {
   return (
     <Main $marginTop="profile">
       <EditProvider>
-        <HeaderComponent />
+        {/* <HeaderComponent /> */}
         <Content>
           <Tittle>Profile</Tittle>
           <Wrapper>

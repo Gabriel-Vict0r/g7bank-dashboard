@@ -5,12 +5,15 @@ import AssetAndBalance from "./Wallet/Asset&Balance";
 import { EditPages, ShowPages } from "../../components/Contexts/ShowPages";
 
 const Pages = () => {
-  const { show, showProfile, showWallet } = useContext(ShowPages);
-  return <>
-    {show && <Home />}
-    {showProfile && <Profile />}
-    {showWallet && <AssetAndBalance />}
-  </>;
+  const { show, showProfile, shoWallet } = useContext(ShowPages);
+
+  return (
+    <>
+      {show && <Home />}
+      {showProfile && <Profile />}
+      {shoWallet && <AssetAndBalance />}
+    </>
+  );
 };
 
 export default Pages;

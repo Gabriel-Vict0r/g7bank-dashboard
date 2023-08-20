@@ -29,10 +29,17 @@ const MenuComponent = () => {
   const changePages = (e) => {
     if (e === "dashboard") {
       setShowProfile(false);
+      setShoWallet(false);
       setShow(true);
     } else if (e === "Profile") {
+      setShoWallet(false);
       setShow(false);
       setShowProfile(true);
+    } else if (e === 'AssetAndBalance') {
+      setShowProfile(false);
+      setShow(false);
+      setShoWallet(true);
+      changeColor();
     }
   };
   const changeColor = () => {
@@ -67,7 +74,10 @@ const MenuComponent = () => {
         </Element>
         {showWallet && (
           <>
-            <SubElement $colorElement={colorOne} onClick={changeColor}>
+            <SubElement
+              $colorElement={colorOne}
+              onClick={(e) => changePages((e = "AssetAndBalance"))}
+            >
               Asset & Balance
             </SubElement>
             <SubElement
