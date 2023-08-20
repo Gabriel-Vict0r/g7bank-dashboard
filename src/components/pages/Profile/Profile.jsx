@@ -8,7 +8,7 @@ import { ContactDetails, Address } from "./BasicContact";
 import { EditProvider } from "../../Contexts/BtnEditProfile";
 const Profile = () => {
   return (
-    <Main $marginTop="profile">
+    <Main $marginTop="pages">
       <EditProvider>
         {/* <HeaderComponent /> */}
         <Content>
