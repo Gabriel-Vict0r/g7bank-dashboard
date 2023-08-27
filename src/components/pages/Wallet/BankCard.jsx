@@ -1,5 +1,5 @@
 import React from 'react'
-import { WrapperCard, ImgChip, InfsPeople, FooterCard, BoxInfs, FlagCard } from "./BankCard.style";
+import { WrapperCard, ImgChip, InfsPeople, FooterCard, BoxInfs, FlagCard, DetailsCard } from "./BankCard.style";
 import { HeaderCard } from './AssetAndBalance.style'
 import { SubTitle } from '../Dashboard/Dashboard.style'
 import { FcSimCardChip, FcSimCard } from "react-icons/Fc";
@@ -17,7 +17,8 @@ const BankCard = ({bank}) => {
       <FooterCard>
         <BoxInfs>
           <InfsPeople $isName={false}>5206-2356-4512-4982</InfsPeople>
-          
+          <DetailsCard>Expair 01/23</DetailsCard>
+          <DetailsCard>CVV 520</DetailsCard>
         </BoxInfs>
         <FlagCard src={flag} alt="Flag from card" />
       </FooterCard>
