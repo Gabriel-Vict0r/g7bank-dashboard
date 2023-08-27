@@ -7,12 +7,14 @@ import {
 } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { CiWallet } from "react-icons/ci";
+import { IoIosArrowDown } from "react-icons/io";
 import { BsCalendar3Range, BsGraphUpArrow } from "react-icons/bs";
 import { FaFileInvoiceDollar } from "react-icons/fa";
 import { RiListSettingsLine } from "react-icons/ri";
 import { BiTransfer } from "react-icons/bi";
 import { useState } from "react";
 import { ShowPages } from "./Contexts/ShowPages";
+import Collapse from "../img/icons/collapse.svg";
 const MenuComponent = () => {
   const [showWallet, setWallets] = useState(false);
   const [colorOne, setColorOne] = useState(false);
@@ -35,7 +37,7 @@ const MenuComponent = () => {
       setShoWallet(false);
       setShow(false);
       setShowProfile(true);
-    } else if (e === 'AssetAndBalance') {
+    } else if (e === "AssetAndBalance") {
       setShowProfile(false);
       setShow(false);
       setShoWallet(true);
@@ -57,6 +59,7 @@ const MenuComponent = () => {
   const showSubmenuus = () => {
     showWallet ? setWallets(false) : setWallets(true);
   };
+  const collapseChange = () => {};
   return (
     <Menu>
       <List>
@@ -71,6 +74,7 @@ const MenuComponent = () => {
         <Element onClick={showSubmenuus}>
           <CiWallet />
           Wallet
+          <IoIosArrowDown />
         </Element>
         {showWallet && (
           <>
@@ -104,6 +108,10 @@ const MenuComponent = () => {
         <Element to="/setting">
           <RiListSettingsLine />
           Setting
+        </Element>
+        <Element>
+          <img src={Collapse} alt="" onClick={collapseChange} />
+          Collapse
         </Element>
       </List>
     </Menu>
