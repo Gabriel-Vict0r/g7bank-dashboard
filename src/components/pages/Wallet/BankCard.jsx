@@ -1,12 +1,20 @@
-import React from 'react'
-import { WrapperCard, ImgChip, InfsPeople, FooterCard, BoxInfs, FlagCard, DetailsCard } from "./BankCard.style";
-import { HeaderCard } from './AssetAndBalance.style'
-import { SubTitle } from '../Dashboard/Dashboard.style'
+import React from "react";
+import {
+  WrapperCard,
+  ImgChip,
+  InfsPeople,
+  FooterCard,
+  BoxInfs,
+  FlagCard,
+  DetailsCard,
+} from "./BankCard.style";
+import { HeaderCard } from "./AssetAndBalance.style";
+import { SubTitle } from "../Dashboard/Dashboard.style";
 import { FcSimCardChip, FcSimCard } from "react-icons/Fc";
 import chip from "../../../img/chip.svg";
 import flag from "../../../img/flag.svg";
-const BankCard = ({bank}) => {
-  console.log(bank)
+const BankCard = ({ bank }) => {
+  console.log(bank);
   return (
     <WrapperCard $typeBank={bank}>
       <HeaderCard>
@@ -24,6 +32,6 @@ const BankCard = ({bank}) => {
       </FooterCard>
     </WrapperCard>
   );
-}
+};
 
-export default BankCard
+export default BankCard;

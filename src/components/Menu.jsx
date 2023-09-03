@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Menu, List, Element, SubElement } from "./Menu.style";
+import { Menu, List, Element, SubElement, TextMenu } from "./Menu.style";
 import {
   MdOutlineDashboard,
   MdOutlineCurrencyExchange,
@@ -19,7 +19,8 @@ const MenuComponent = () => {
   const [showWallet, setWallets] = useState(false);
   const [colorOne, setColorOne] = useState(false);
   const [colorTwo, setColorTwo] = useState(false);
-
+  const [rotate, setRotate] = useState();
+  const [collapse, setCollapse] = useState(false);
   const {
     show,
     setShow,
@@ -58,23 +59,37 @@ const MenuComponent = () => {
   };
   const showSubmenuus = () => {
     showWallet ? setWallets(false) : setWallets(true);
+    if (rotate == 180) {
+      setRotate(0);
+    } else {
+      setRotate(180);
+    }
   };
-  const collapseChange = () => {};
+  const collapseChange = () => {
+    collapse ? setCollapse(false) : setCollapse(true);
+  };
+  console.log(collapse);
   return (
-    <Menu>
-      <List>
+    <Menu $isCollapse={collapse}>
+      <List $isCollapse={collapse}>
         <Element onClick={(e) => changePages((e = "dashboard"))}>
-          <MdOutlineDashboard />
-          dashboard
+          <MdOutlineDashboard $isCollapse={collapse} />
+          {!collapse && <TextMenu $isCollapse={collapse}>Dashboard</TextMenu>}
         </Element>
         <Element onClick={(e) => changePages((e = "Profile"))}>
           <CgProfile />
-          Profile
+          {!collapse && <TextMenu>Profile</TextMenu>}
         </Element>
         <Element onClick={showSubmenuus}>
           <CiWallet />
-          Wallet
-          <IoIosArrowDown />
+          {!collapse && <TextMenu>Wallet</TextMenu>}
+          <IoIosArrowDown
+            style={{
+              transform: `rotate(${rotate}deg)`,
+              transition: "ease-in-out .2s",
+            }}
+            opacity={collapse ? 0 : 1}
+          />
         </Element>
         {showWallet && (
           <>
@@ -82,36 +97,36 @@ const MenuComponent = () => {
               $colorElement={colorOne}
               onClick={(e) => changePages((e = "AssetAndBalance"))}
             >
-              Asset & Balance
+              {!collapse && <TextMenu>Asset & Balance</TextMenu>}
             </SubElement>
             <SubElement
               $colorElement={colorTwo}
               to="/CardManagement"
               onClick={changeColorTwo}
             >
-              Card management
+              {!collapse && <TextMenu>Card Management</TextMenu>}
             </SubElement>
           </>
         )}
         <Element to="/transaction">
           <BsGraphUpArrow />
-          Transaction
+          {!collapse && <TextMenu>Transaction</TextMenu>}
         </Element>
         <Element to="/Exchange">
           <MdOutlineCurrencyExchange />
-          exchange
+          {!collapse && <TextMenu>Exchange</TextMenu>}
         </Element>
         <Element to="/contacts">
           <MdOutlineContacts />
-          Contacts
+          {!collapse && <TextMenu>Contacts</TextMenu>}
         </Element>
         <Element to="/setting">
           <RiListSettingsLine />
-          Setting
+          {!collapse && <TextMenu>Settings</TextMenu>}
         </Element>
-        <Element>
-          <img src={Collapse} alt="" onClick={collapseChange} />
-          Collapse
+        <Element onClick={collapseChange}>
+          <img src={Collapse} alt="Ícone para contrair menu" />
+          {!collapse && <TextMenu>Collapse</TextMenu>}
         </Element>
       </List>
     </Menu>

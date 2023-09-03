@@ -5,9 +5,12 @@ import px2vw from "../utils/px2vw";
 
 export const Menu = styled(Fade)`
   background-color: ${(prop) => prop.theme.colors.blackSecondary};
-  width: 18%;
-  min-width: 220px;
+  width: ${(prop) => (prop.$isCollapse ? "6%" : "18%")};
+  //width: calc(18% - 250px);
+  //min-width: 220px;
   border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+  //z-index: 1;
 `;
 export const List = styled.ul`
   display: flex;
@@ -15,14 +18,15 @@ export const List = styled.ul`
   align-items: flex-start;
   justify-content: center;
   padding: 1.5rem;
-  gap: 1rem;
+  gap: ${(prop) => (prop.$isCollapse ? "2rem" : "1rem")};
   list-style: none;
+  //z-index: 2;
 `;
 export const Element = styled(Link)`
   text-decoration: none;
   color: white;
-  //font-size: ${(prop) => prop.theme.length.textHeader};
-  font-size: ${px2vw(16)};
+  font-size: ${(prop) => prop.theme.length.textHeader};
+  //font-size: ${px2vw(16)};
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -33,24 +37,28 @@ export const Element = styled(Link)`
   border-radius: 0.4rem;
   transition: all 0.3s ease-in-out;
   width: 100%;
-  /* @media (max-width: 1200px) {
-    font-size: ${px2vw(19)};
+  @media (max-width: 1200px) {
+    //font-size: ${px2vw(19)};
   }
   @media (max-width: 850px) {
-    font-size: ${px2vw(25)};
-  } */
-  & svg{
+    //font-size: ${px2vw(25)};
+  }
+  & svg {
     color: white;
-    font-size: ${px2vw(20)};
+    font-size: ${(prop) => (prop.$isCollapse ? "4rem" : "1.7rem")};
     //font-size: 1.7rem;
     min-width: 27px;
   }
-  & img { 
+  & img {
     width: ${px2vw(20)};
   }
   &:hover {
     background-color: #292929;
   }
+`;
+export const TextMenu = styled.span`
+  transform: ${(prop) => (prop.$isCollapse ? "scale(0)" : "scale(1)")};
+  transition: transform 60s ease-in-out;
 `;
 export const SubElement = styled(Link)`
   color: ${(props) =>
@@ -58,7 +66,7 @@ export const SubElement = styled(Link)`
   text-decoration: none;
   //padding: 0px 3rem;
   //text-indent: 1.5px;
-  font-size: ${px2vw(15)};
+  font-size: 1rem;
   margin-left: 2.7rem;
   width: 100%;
   &:hover {
