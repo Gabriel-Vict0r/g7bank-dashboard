@@ -72,7 +72,10 @@ const MenuComponent = () => {
   return (
     <Menu $isCollapse={collapse}>
       <List $isCollapse={collapse}>
-        <Element onClick={(e) => changePages((e = "dashboard"))}>
+        <Element
+          onClick={(e) => changePages((e = "dashboard"))}
+          aria-label="teste teste"
+        >
           <MdOutlineDashboard $isCollapse={collapse} />
           {!collapse && <TextMenu $isCollapse={collapse}>Dashboard</TextMenu>}
         </Element>

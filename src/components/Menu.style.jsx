@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import px2vw from "../utils/px2vw";
@@ -37,6 +37,24 @@ export const Element = styled(Link)`
   border-radius: 0.4rem;
   transition: all 0.3s ease-in-out;
   width: 100%;
+  & [aria-label] {
+    position: relative;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+  }
+  & [aria-label]:after {
+    position: absolute;
+    top: -5px;
+    padding: 5px;
+    left: calc(100% + 2px);
+    content: attr(data-tooltip);
+    background-color: #0095ff;
+    color: White;
+  }
+  & [aria-label]:hover::after {
+    display: block;
+  }
   @media (max-width: 1200px) {
     //font-size: ${px2vw(19)};
   }
@@ -48,6 +66,23 @@ export const Element = styled(Link)`
     font-size: ${(prop) => (prop.$isCollapse ? "4rem" : "1.7rem")};
     //font-size: 1.7rem;
     min-width: 27px;
+    & [aria-label] {
+      position: relative;
+      font-weight: bold;
+      background-color: white;
+    }
+    & [aria-label]:after {
+      position: absolute;
+      top: -5px;
+      padding: 5px;
+      left: calc(100% + 2px);
+      content: attr(data-tooltip);
+      background-color: #0095ff;
+      color: White;
+    }
+    & [aria-label]:hover::after {
+      display: block;
+    }
   }
   & img {
     width: ${px2vw(20)};
@@ -56,10 +91,18 @@ export const Element = styled(Link)`
     background-color: #292929;
   }
 `;
-export const TextMenu = styled.span`
-  transform: ${(prop) => (prop.$isCollapse ? "scale(0)" : "scale(1)")};
-  transition: transform 60s ease-in-out;
+const showText = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity : 1;
+  }
 `;
+export const TextMenu = styled.span`
+  animation: ${showText} 1.3s linear forwards;
+`;
+
 export const SubElement = styled(Link)`
   color: ${(props) =>
     props.$colorElement ? props.theme.colors.primary : props.theme.colors.body};
@@ -69,6 +112,7 @@ export const SubElement = styled(Link)`
   font-size: 1rem;
   margin-left: 2.7rem;
   width: 100%;
+  transition: all 0.2s ease-in-out;
   &:hover {
     color: ${(prop) => prop.theme.colors.primary};
     transition: all 0.2s ease-in-out;
