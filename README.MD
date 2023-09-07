@@ -1,10 +1,10 @@
 <img src='./src/img/background.png' alt='logo' align='center'>
 <h1>G7 BANK DASHBOARD</h1>
 
-<p>Bem-vindo ao repositório do G7Bank Dashboard, uma aplicação web que oferece uma interface amigável para gerenciar as operações bancárias com base na plataforma online DOTBANK. Esta aplicação foi desenvolvida para tornar a gestão financeira mais simples e eficiente para clientes do DOTBANK.</p>
+<p>Bem-vindo ao repositório do G7Bank Dashboard, uma aplicação web que oferece uma interface amigável para gerenciar as operações bancárias. Esta aplicação foi desenvolvida para tornar a gestão financeira mais simples e eficiente.</p>
 
 <h3>Visão Geral</h3>
-<p>O G7Bank Dashboard é uma aplicação web construída usando tecnologias modernas como HTML5, CSS3, JavaScript e [Framework XYZ] para fornecer uma experiência de usuário suave e funcionalidades avançadas para a gestão de contas bancárias.</p>
+<p>O G7Bank é uma aplicação web construída usando tecnologias modernas como Javascript, Styled-components e React.JS para fornecer uma experiência de usuário suave e funcionalidades avançadas para a gestão de contas bancárias.</p>
 
 <h3>Funcionalidades Principais</h3>
 <ul>
